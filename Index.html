@@ -1,0 +1,228 @@
+<!-- Tell the browser this is an HTML5 document -->
+<!doctype html>
+
+<!-- Root element; lang helps accessibility and SEO -->
+<html lang="en">
+  <!-- Head contains metadata (not visible on the page) -->
+  <head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Makes the layout responsive on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Browser tab title -->
+    <title>The Archive: Becky</title>
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Optional: nicer font (safe to remove if you want fully offline) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Optional: needed for the Google font connection -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Optional: cinematic heading font + clean body font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- Body contains everything visible on the page -->
+  <body>
+    <!-- Subtle background grain layer for “film” feel -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Main page wrapper -->
+    <main class="wrap">
+      <!-- HERO / OPENING -->
+      <section class="hero">
+        <!-- Small label text -->
+        <p class="kicker">THE ARCHIVE: BECKY</p>
+
+        <!-- Big title -->
+        <h1>Happy Birthday, Scut.</h1>
+
+        <!-- Short cinematic subtext -->
+        <p class="sub">
+          This is your memory archive.<br />
+          Built for you.
+        </p>
+
+        <!-- Call to action button -->
+        <button class="btn" id="beginBtn" type="button">Begin</button>
+
+        <!-- Small helper hint -->
+        <p class="hint">Scroll with your thumb. Let it play like a story.</p>
+      </section>
+
+      <!-- TIMELINE -->
+      <section class="block reveal">
+        <!-- Section title -->
+        <h2>Chapter One</h2>
+
+        <!-- Timeline card -->
+        <div class="card">
+          <!-- Date -->
+          <p class="date">30 August</p>
+          <!-- Memory lines -->
+          <p class="lines">
+            We matched.<br />
+            It should have been ordinary.<br />
+            It wasn’t.
+          </p>
+        </div>
+
+        <!-- Timeline card -->
+        <div class="card">
+          <p class="date">3 October</p>
+          <p class="lines">
+            Our first date.<br />
+            You were even better in person.
+          </p>
+        </div>
+
+        <!-- Timeline card -->
+        <div class="card">
+          <p class="date">21 October</p>
+          <p class="lines">
+            The day I asked you to be mine.<br />
+            Not because I had to.<br />
+            Because I wanted to.
+          </p>
+        </div>
+      </section>
+
+         <!-- PHOTO STILLS -->
+      <section class="block reveal">
+        <h2>Memory Stills</h2>
+
+        <p class="mutedLead">
+          Two goodbyes… and one moment that didn’t know it was being saved.
+        </p>
+
+        <div class="gallery">
+          <!-- Still 1 -->
+          <figure class="still">
+            <img src="img/goodbye-1.jpg" alt="Becky saying goodbye (first time)" loading="lazy" />
+            <figcaption>Goodbye #1</figcaption>
+          </figure>
+
+          <!-- Still 2 -->
+          <figure class="still">
+            <img src="img/goodbye-2.jpg" alt="Becky saying goodbye (later)" loading="lazy" />
+            <figcaption>Goodbye #2 — 119 days later</figcaption>
+          </figure>
+
+          <!-- Still 3 -->
+          <figure class="still wide">
+            <img src="img/candid.jpg" alt="A candid moment of us together" loading="lazy" />
+            <figcaption>The one I’d replay forever</figcaption>
+          </figure>
+        </div>
+      </section>
+
+        <!-- “Cinematic list” -->
+        <ul class="list">
+          <li>The silly faces you pull when I’m trying to stay serious.</li>
+          <li>Your random hugs that reset my whole mood.</li>
+          <li>The toasted sandwiches in the morning like it’s the most natural thing in the world.</li>
+          <li>“Numpty.”</li>
+          <li>“Scut.”</li>
+        </ul>
+
+        <!-- One-line emotional landing -->
+        <p class="oneLine">You make ordinary days feel important.</p>
+      </section>
+
+      <!-- SLIDESHOW SECTION -->
+<section class="block reveal">
+  <h2>Us.</h2>
+
+  <div class="slideshow">
+<div class="slides">
+
+  <img src="img/us1.jpg" class="slide active top" alt="Us together 1" />
+  <img src="img/us2.jpg" class="slide center" alt="Us together 2" />
+  <img src="img/us3.jpg" class="slide top" alt="Us together 3" />
+  <img src="img/us4.jpg" class="slide center" alt="Us together 4" />
+
+</div>
+  </div>
+</section>
+
+<!-- AUDIO MESSAGE SECTION -->
+<section class="block reveal">
+  <h2>For You.</h2>
+
+  <p class="mutedLead">
+    Press play when you're alone.
+  </p>
+
+  <div class="audioWrap">
+    <button id="playAudio" class="btn">Play Message</button>
+    <audio id="birthdayAudio" src="audio/birthday.mp3"></audio>
+  </div>
+</section>
+
+      <!-- APARTMENT -->
+      <section class="block reveal">
+        <h2>When It Became More</h2>
+
+        <!-- Tight, dramatic paragraph -->
+        <p class="para">
+          You don’t realise what it meant when you helped me sort the apartment.<br /><br />
+          It wasn’t just organising things.<br /><br />
+          It felt like you were building something with me.<br /><br />
+          That’s when it stopped feeling temporary.<br />
+          That’s when it started feeling real.
+        </p>
+      </section>
+
+      <!-- LETTER -->
+      <section class="block reveal">
+        <h2>A Letter For You</h2>
+
+        <!-- Letter container -->
+        <div class="letter">
+          <p>Becky,</p>
+
+          <p>
+            Matching with you was luck.<br />
+            Going on that first date was excitement.<br />
+            Asking you to be my girlfriend was certainty.
+          </p>
+
+          <p>
+            You’ve brought warmth into my life in ways you probably don’t even realise.
+          </p>
+
+          <p>
+            You steady me.<br />
+            You challenge me.<br />
+            You make me laugh when I don’t even want to.
+          </p>
+
+          <p>
+            I’m proud of what we’re building.<br />
+            And I can’t wait for the next chapter — properly.
+          </p>
+
+          <p class="signoff">
+            Happy Birthday, Scut.<br />
+            <span class="sig">— Your Patrick</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- FINAL FRAME -->
+      <section class="final reveal">
+        <p class="finalText">Next Chapter Loading…</p>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p>Made by Numpty • <span id="year"></span></p>
+      </footer>
+    </main>
+
+    <!-- Link the external JS file (loaded at the end for performance) -->
+    <script src="script.js"></script>
+  </body>
+</html>

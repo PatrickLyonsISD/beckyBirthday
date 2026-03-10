@@ -1,0 +1,464 @@
+/* Define theme variables so you can tweak the whole vibe easily */
+:root {
+  /* Background colour */
+  --bg: #0b0b0f;
+  /* Card background */
+  --panel: rgba(255, 255, 255, 0.05);
+  /* Border colour */
+  --border: rgba(255, 255, 255, 0.10);
+  /* Main text colour */
+  --text: rgba(255, 255, 255, 0.92);
+  /* Muted text colour */
+  --muted: rgba(255, 255, 255, 0.68);
+  /* Accent colour (champagne vibe) */
+  --accent: rgba(245, 230, 190, 0.95);
+  /* Max width to keep it cinematic */
+  --max: 780px;
+}
+
+/* Reset basic box sizing for predictable layout */
+* {
+  box-sizing: border-box;
+}
+
+/* Make the page fill the screen and use the theme background */
+html,
+body {
+  height: 100%;
+}
+
+/* Base page styling */
+body {
+  /* Remove default margins */
+  margin: 0;
+  /* Set the background */
+  background: radial-gradient(1200px 600px at 50% 0%, rgba(245, 230, 190, 0.10), transparent 60%),
+              radial-gradient(800px 600px at 10% 30%, rgba(255, 255, 255, 0.06), transparent 55%),
+              var(--bg);
+  /* Default text colour */
+  color: var(--text);
+  /* Default font */
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  /* Smooth text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Film grain overlay */
+.grain {
+  /* Cover the full screen */
+  position: fixed;
+  inset: 0;
+  /* Put it above background but below content */
+  z-index: 0;
+  /* Subtle grain effect */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+  /* Keep it subtle */
+  opacity: 0.08;
+  /* Don't block clicks */
+  pointer-events: none;
+}
+
+/* Wrapper that keeps content centered */
+.wrap {
+  /* Ensure content sits above grain */
+  position: relative;
+  z-index: 1;
+  /* Center content */
+  margin: 0 auto;
+  /* Limit width for a premium look */
+  max-width: var(--max);
+  /* Page padding */
+  padding: 56px 20px 40px;
+}
+
+/* Hero section styling */
+.hero {
+  /* Center hero content */
+  text-align: center;
+  /* Give it space */
+  padding: 48px 0 28px;
+  /* Add breathing room */
+  margin-bottom: 40px;
+}
+
+/* Small uppercase label */
+.kicker {
+  /* Make it feel like a film title card */
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+/* Main hero title */
+.hero h1 {
+  /* Serif for cinematic headings */
+  font-family: "Playfair Display", Georgia, serif;
+  /* Size that reads well on phone */
+  font-size: clamp(34px, 5vw, 56px);
+  /* Tight line height for drama */
+  line-height: 1.05;
+  /* Small margin */
+  margin: 0 0 14px;
+}
+
+/* Hero subtitle */
+.sub {
+  /* Slightly larger than normal */
+  font-size: 16px;
+  /* Comfortable line height */
+  line-height: 1.6;
+  /* Muted colour */
+  color: var(--muted);
+  /* Spacing */
+  margin: 0 0 22px;
+}
+
+/* Primary button */
+.btn {
+  /* Remove default styling */
+  border: 1px solid var(--border);
+  /* Background */
+  background: rgba(255, 255, 255, 0.06);
+  /* Text colour */
+  color: var(--text);
+  /* Padding for touch targets */
+  padding: 12px 18px;
+  /* Rounded corners */
+  border-radius: 14px;
+  /* Cursor */
+  cursor: pointer;
+  /* Smooth hover */
+  transition: transform 160ms ease, background 160ms ease, border 160ms ease;
+}
+
+/* Button hover */
+.btn:hover {
+  /* Slight lift */
+  transform: translateY(-1px);
+  /* A little brighter */
+  background: rgba(255, 255, 255, 0.09);
+  /* Border slightly brighter */
+  border-color: rgba(245, 230, 190, 0.22);
+}
+
+/* Button focus (keyboard accessibility) */
+.btn:focus {
+  outline: 2px solid rgba(245, 230, 190, 0.35);
+  outline-offset: 3px;
+}
+
+/* Small hint text */
+.hint {
+  /* Smaller font */
+  font-size: 13px;
+  /* Muted */
+  color: rgba(255, 255, 255, 0.52);
+  /* Spacing */
+  margin: 18px 0 0;
+}
+
+/* Base block section spacing */
+.block {
+  /* Space between sections */
+  margin: 44px 0;
+}
+
+/* Headings for blocks */
+.block h2,
+.finalText {
+  /* Cinematic serif */
+  font-family: "Playfair Display", Georgia, serif;
+  /* Size */
+  font-size: 28px;
+  /* Spacing */
+  margin: 0 0 18px;
+  /* Accent underline look (subtle) */
+  color: var(--text);
+}
+
+/* Card style for timeline moments */
+.card {
+  /* Panel look */
+  background: var(--panel);
+  /* Border */
+  border: 1px solid var(--border);
+  /* Rounded corners */
+  border-radius: 18px;
+  /* Padding */
+  padding: 16px 16px;
+  /* Spacing between cards */
+  margin: 12px 0;
+}
+
+/* Date text inside cards */
+.date {
+  /* Small uppercase */
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+/* Memory lines inside cards */
+.lines {
+  /* Comfortable reading */
+  line-height: 1.65;
+  /* Spacing */
+  margin: 0;
+  /* Slightly muted */
+  color: var(--text);
+}
+
+/* List styling */
+.list {
+  /* Remove default left padding a bit */
+  padding-left: 18px;
+  /* Spacing */
+  margin: 0 0 16px;
+}
+
+/* List items */
+.list li {
+  /* Spacing per line */
+  margin: 10px 0;
+  /* Line height */
+  line-height: 1.65;
+  /* Slightly muted for softness */
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* One-line emotional statement */
+.oneLine {
+  /* Bigger and cleaner */
+  font-size: 17px;
+  /* Accent */
+  color: rgba(245, 230, 190, 0.92);
+  /* Margin */
+  margin: 10px 0 0;
+}
+
+/* Paragraph section style */
+.para {
+  /* Line spacing */
+  line-height: 1.75;
+  /* Slightly larger for impact */
+  font-size: 16px;
+  /* Muted for cinematic tone */
+  color: rgba(255, 255, 255, 0.86);
+  /* Panel styling */
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  padding: 18px 16px;
+}
+
+/* Letter container */
+.letter {
+  /* Panel styling */
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  padding: 18px 16px;
+}
+
+/* Letter paragraphs */
+.letter p {
+  /* Spacing */
+  margin: 0 0 14px;
+  /* Line height */
+  line-height: 1.75;
+  /* Slightly muted */
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Signoff */
+.signoff {
+  /* Extra spacing */
+  margin-top: 18px;
+}
+
+/* Signature styling */
+.sig {
+  /* Accent signature */
+  color: var(--accent);
+}
+
+/* Final section */
+.final {
+  /* More space */
+  margin: 60px 0 30px;
+  /* Center like an end title card */
+  text-align: center;
+  /* Padding */
+  padding: 40px 0 22px;
+  /* Subtle divider */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Final “Moving In” text */
+.finalBig {
+  /* Big serif */
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 5vw, 52px);
+  margin: 6px 0 0;
+  color: var(--accent);
+}
+
+/* Footer */
+.footer {
+  /* Center */
+  text-align: center;
+  /* Muted */
+  color: rgba(255, 255, 255, 0.45);
+  /* Small font */
+  font-size: 12px;
+  /* Spacing */
+  margin-top: 22px;
+}
+
+/* REVEAL ANIMATION (start hidden) */
+.reveal {
+  /* Start transparent */
+  opacity: 0;
+  /* Start slightly lower */
+  transform: translateY(16px);
+  /* Smooth transition */
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+/* REVEAL ANIMATION (when visible) */
+.reveal.is-visible {
+  /* Make it visible */
+  opacity: 1;
+  /* Move to natural position */
+  transform: translateY(0);
+}
+
+/* Respect reduced motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable transitions */
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+/* Small muted lead text under a section heading */
+.mutedLead {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+/* Photo gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* Two columns on wider screens */
+@media (min-width: 720px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .still.wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Individual still wrapper */
+.still {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Images */
+.still img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 900ms ease;
+}
+
+/* On hover, subtle cinematic zoom */
+.still:hover img {
+  transform: scale(1.06);
+}
+
+/* Captions */
+.still figcaption {
+  padding: 12px 14px 14px;
+  color: rgba(245, 230, 190, 0.92);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.still.wide img {
+  height: 380px;
+}
+/* Slideshow container */
+.slideshow {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255,255,255,0.035);
+
+  /* This creates consistent cinematic framing */
+  aspect-ratio: 16 / 9;
+}
+
+/* Slides wrapper fills the container */
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Each slide fills the container */
+.slide {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Crop focus helpers */
+.slide.top {
+  object-position: center 20%;
+}
+
+.slide.center {
+  object-position: center;
+}
+
+.slide.bottom {
+  object-position: center 80%;
+}
+
+/* Audio wrapper */
+.audioWrap {
+  margin-top: 18px;
+}
+.slideshow {
+  aspect-ratio: 4 / 5;
+}
